@@ -1,5 +1,16 @@
 import './style.css'
 
+const response = await fetch(`https://uselessfacts.jsph.pl/api/v2/facts/random?language=en`)
+console.log(response)
+const data = await response.json()
+let fod = data['text']
+let factPara = document.querySelector<HTMLParagraphElement>('.fact')
+
+if(!factPara){
+  throw new Error ('Object could possibly be null')
+}
+
+factPara.innerText = fod
 
 let tod: number = new Date().getHours()
 let greet = document.querySelector<HTMLHeadingElement>('.greeting')
