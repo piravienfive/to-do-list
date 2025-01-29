@@ -1,0 +1,39 @@
+#container{
+  border: 10px solid brown;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  overflow: auto;
+  background: beige;
+}
+
+.innerContainer{
+  border: 15px solid green;
+  display: flex;
+  place-items: center;
+  justify-content: space-evenly;
+  width: 30%;
+  flex-direction: column;
+  
+}
+
+.savedTasks{
+  border: 5px solid burlywood;
+  flex-direction : column;
+  display: flex
+}
+
+.welcome{
+  font-size: 50px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+}
+.add{
+
+  height: 10%;
+  width: 30%;
+}
