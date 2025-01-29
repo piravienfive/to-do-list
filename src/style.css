@@ -1,5 +1,5 @@
 #container{
-  border: 10px solid brown;
+  /* border: 10px solid brown; */
   display: flex;
   justify-content: center;
   position: fixed;
@@ -22,9 +22,9 @@
 }
 
 .savedTasks{
-  border: 5px solid burlywood;
+  /* border: 5px solid burlywood; */
   flex-direction : column;
-  display: flex
+  display: 'fle'
 }
 
 .welcome{
@@ -32,8 +32,12 @@
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 
 }
-.add{
 
-  height: 10%;
-  width: 30%;
+.buttons{
+  display: flex;
+  justify-content: space-around;
+}
+.add{
+  height: 100%;
+  width: 100%;
 }
