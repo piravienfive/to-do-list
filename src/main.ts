@@ -1,9 +1,8 @@
 import './style.css'
 
 let deleteButton: any = ''
-
+let counter = 0
 function addTaskHandler (addBttn: HTMLButtonElement) {
-  let counter = 0
   console.log('clicked!')
   addBttn.style.display = 'none'
   let newInput = document.createElement('input')
@@ -32,8 +31,6 @@ function addTaskHandler (addBttn: HTMLButtonElement) {
   newSaveButton.addEventListener('click' , () => {
     const divForTask = document.createElement('div')
     counter += 1
-
-    
 
     if(!deleteButton){
       deleteButton = document.createElement('button')
@@ -81,15 +78,20 @@ function addTaskHandler (addBttn: HTMLButtonElement) {
       let currentTasks = document.querySelectorAll<HTMLInputElement>('.tasks')
       console.log(currentTasks)
       console.log(typeof(currentTasks))
-      for(let i = 0; i < currentTasks.length; i++){
+      for(let i: number = 0; i < currentTasks.length; i++){
         console.log(currentTasks[i].checked)
         if(currentTasks[i].checked == true){
-          currentTasks[i].remove()
-          document.querySelector<HTMLLabelElement>(`#tasks${i + 1}`)?.remove()
+          console.log(i)
+          console.log(currentTasks[i].id)
+          document.querySelector<HTMLInputElement>(`#${currentTasks[i].id }`)?.remove()
+          document.querySelector<HTMLLabelElement>(`#${currentTasks[i].id }`)?.remove()
 
         }
       }
-
+      if(currentTasks.length == 0){
+        deleteButton.remove()
+        deleteButton = ''
+      }
     })
 
 
