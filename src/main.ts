@@ -1,5 +1,24 @@
 import './style.css'
 
+
+let tod: number = new Date().getHours()
+let greet = document.querySelector<HTMLHeadingElement>('.greeting')
+
+if(!greet){
+  throw new Error ('Object could possibly be null')
+}
+
+if(tod <= 11 && tod >= 5){
+  greet.innerText = 'Good Morning!'
+}
+else if(tod <= 17 && tod >= 12){
+  greet.innerText = 'Good Afternoon'
+}
+else{
+  greet.innerText = 'Good Evening'
+}
+
+
 let deleteButton: any = ''
 let counter = 0
 function addTaskHandler (addBttn: HTMLButtonElement) {
