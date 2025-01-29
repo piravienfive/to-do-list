@@ -8,11 +8,11 @@
   bottom: 0;
   right: 0;
   overflow: auto;
-  background: beige;
+  background: #A7C7E7;
 }
 
 .innerContainer{
-  border: 15px solid green;
+  /* border: px solid green; */
   display: flex;
   place-items: center;
   justify-content: space-evenly;
@@ -44,8 +44,10 @@
   justify-content: space-around;
 }
 .add{
-  height: 100%;
-  width: 100%;
+
+  font-size: 20px;
+  margin: 20px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 p {

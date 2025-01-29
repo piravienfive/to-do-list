@@ -36,10 +36,11 @@ function addTaskHandler (addBttn: HTMLButtonElement) {
   console.log('clicked!')
   addBttn.style.display = 'none'
   let newInput = document.createElement('input')
+  newInput.style.fontSize = '20px'
   let newSaveButton = document.createElement('button')
   newSaveButton.innerText = 'Save'
   // newSaveButton.disabled = true
-  newSaveButton.style.fontSize = '30px'
+  newSaveButton.style.fontSize = '20px'
   let listOfTasks = document.querySelector<HTMLDivElement>('.savedTasks')
   let addSection = document.querySelector<HTMLDivElement>('.addingTasks')
   if (!listOfTasks || !addSection){
@@ -66,14 +67,10 @@ function addTaskHandler (addBttn: HTMLButtonElement) {
       deleteButton = document.createElement('button')
       const buttonsDiv = document.querySelector<HTMLDivElement>('.buttons')
       buttonsDiv?.appendChild(deleteButton)
-      deleteButton.id = 'add'
+      deleteButton.className = 'add'
       deleteButton.innerText = 'Remove'
     }
-    // deleteButton = document.createElement('button')
-    // const buttonsDiv = document.querySelector<HTMLDivElement>('.buttons')
-    // buttonsDiv?.appendChild(deleteButton)
-    // deleteButton.id = 'add'
-    // deleteButton.innerText = 'Remove'
+
     let task = newInput.value
     let newTaskCheckbox = document.createElement('input')
     newTaskCheckbox.type = 'checkbox'
@@ -96,12 +93,9 @@ function addTaskHandler (addBttn: HTMLButtonElement) {
     addBttn.style.order = '2'
     newInput.style.display = 'none'
     newSaveButton.style.display = 'none'
-    // let newTask = document.createElement('h5')
-    // newTask.innerText = task
     listOfTasks.appendChild(divForTask)
     divForTask.appendChild(newTaskCheckbox)
     divForTask.appendChild(newInputLabel)
-    // newTask.style.fontSize = '30px'
 
 
     deleteButton.addEventListener('click', () => {
@@ -133,6 +127,9 @@ function addTaskHandler (addBttn: HTMLButtonElement) {
 
 
 const addButton = document.querySelector<HTMLButtonElement>('.add')
+if(!addButton){
+  throw new Error('Object could be null')
+}
 let doAddTask = (event: Event) => addTaskHandler(addButton)
 
-addButton?.addEventListener('click', doAddTask )
+addButton?.addEventListener('click', doAddTask)
